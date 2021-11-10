@@ -1,0 +1,58 @@
+#!/usr/bin/env python3
+
+class Eingabe:
+    """
+    Dummy-Klasse zum Testen
+    Liefert in den Testfällen vordefinierte Werte
+    """
+    def get_values(self):
+        return "1,2,3,4,5,6"
+
+class Ausgabe:
+    values={}
+    def set_valeus(self,**kvargs):
+        pass
+    def print_results(self):
+        pass
+
+class Ziehung:
+    def shuffle(self):
+        return None
+
+class Lottobude:
+    def __init__(self, eingabe, ausgabe):
+        self.eingabe = eingabe
+        self.ausgabe=ausgabe
+        self.lostrommel = Ziehung()
+        self.tipp =[]
+        self.ziehung = []
+        self.ergebnis = []
+
+    def _prepare_tipp(self, raw_data):
+        self.tipp = raw_data.replace(" ","").split(",")
+
+    def _check_tipp_values(self):
+        pass
+    # Bei Fehler raise RunTimeError!
+
+    def _compare(self):
+        pass
+
+    def spiele(self):
+        self._prepare_tipp(self.eingabe.get_values())
+        self._check_tipp_values()
+        self.ziehung = self.lostrommel.shuffle()
+        self._compare()
+        return self
+
+    def print(self):
+        self.ausgabe.set_values(self.tipp, self.ziehung, self.ergebnis).print_result()
+        #print("Tipp: ",self.tipp)
+        #print("Ziehung: ", self.ziehung)
+        #print("Ergebnis: ", self.ergebnis)
+
+
+if __name__=="__main__":
+    lot=Lottobude()
+    lot.spiele()
+    lot.print()

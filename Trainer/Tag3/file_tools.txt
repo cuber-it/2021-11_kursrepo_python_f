@@ -1,0 +1,22 @@
+Help on module file_tools:
+
+NAME
+    file_tools - Ein Doc-String
+
+FUNCTIONS
+    file_search(pattern, *folders, **kwargs)
+        Durchsucht das Dateisystem nach Dateien und wendet optionalen Filter an
+        
+        Parameters:
+        - pattern: String with filename pattern
+        - *folders: list of folders to start search at
+        - **kwargs: different options 
+            - filter: reference to filter function
+        
+        Returns:
+        - Dictionary: contains Pattern, Reference to filter, for every visited folder the foldername and findings
+
+FILE
+    /home/coder/Workspace/kurse_python_f/Trainer/Tag3/file_tools.py
+
+
